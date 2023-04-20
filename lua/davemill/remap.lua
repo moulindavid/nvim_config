@@ -51,4 +51,7 @@ end)
 
 vim.keymap.set("n", "<S-l>", "gg=G")
 
+--😱
+vim.keymap.set("n", "i", "a")
+vim.keymap.set("n", "a", "i")
 
