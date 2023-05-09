@@ -7,6 +7,7 @@ lsp.ensure_installed({
     'rust_analyzer',
     'jdtls',
     'lua_ls',
+    'gopls',
 })
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
@@ -24,6 +25,7 @@ lsp.format_on_save({
         ['rust_analyzer'] = { 'rust' },
         ['jdtls'] = { 'java' },
         ['tsserver'] = { 'ts' },
+        ['gopls'] = { 'gopls' },
     }
 })
 
