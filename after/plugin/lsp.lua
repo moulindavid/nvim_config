@@ -25,7 +25,7 @@ lsp.format_on_save({
         ['rust_analyzer'] = { 'rust' },
         ['jdtls'] = { 'java' },
         ['tsserver'] = { 'ts' },
-        ['gopls'] = { 'gopls' },
+        ['gopls'] = { 'go' },
     }
 })
 
