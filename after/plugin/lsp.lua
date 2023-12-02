@@ -8,6 +8,7 @@ lsp.ensure_installed({
     'jdtls',
     'lua_ls',
     'gopls',
+    'elixir-ls',
 })
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
@@ -26,6 +27,7 @@ lsp.format_on_save({
         ['jdtls'] = { 'java' },
         ['tsserver'] = { 'ts' },
         ['gopls'] = { 'go' },
+        ['elixir-ls'] = { 'ex' },
     }
 })
 
