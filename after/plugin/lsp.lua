@@ -2,14 +2,8 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-    'tsserver',
-    'rust_analyzer',
-    'jdtls',
-    'lua_ls',
-    'gopls',
-    'elixir-ls',
-})
+lsp.setup_servers({ 'lua_ls', 'jdtls', 'tsserver', 'gopls', 'rust_analyzer' })
+
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
     settings = {
@@ -27,7 +21,6 @@ lsp.format_on_save({
         ['jdtls'] = { 'java' },
         ['tsserver'] = { 'ts' },
         ['gopls'] = { 'go' },
-        ['elixir-ls'] = { 'ex' },
     }
 })
 
@@ -38,12 +31,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
-})
-
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
 })
 
 lsp.set_preferences({
