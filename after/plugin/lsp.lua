@@ -1,8 +1,14 @@
-local lsp = require("lsp-zero")
+local lsp = require("lsp-zero").preset({})
+
+require("mason").setup()
+
+require("mason-lspconfig").setup {
+    ensure_installed = { 'lua_ls', 'jdtls', 'tsserver', 'gopls', 'rust_analyzer', 'ocamllsp' },
+}
 
 lsp.preset("recommended")
 
-lsp.setup_servers({ 'lua_ls', 'jdtls', 'tsserver', 'gopls', 'rust_analyzer' })
+lsp.setup_servers({ 'lua_ls', 'jdtls', 'tsserver', 'gopls', 'rust_analyzer', 'ocamllsp' })
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
@@ -21,6 +27,7 @@ lsp.format_on_save({
         ['jdtls'] = { 'java' },
         ['tsserver'] = { 'ts' },
         ['gopls'] = { 'go' },
+        ['ocamllsp'] = { 'ml' },
     }
 })
 
