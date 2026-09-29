@@ -8,6 +8,7 @@ return {
       require("nvim-treesitter").install({
         "lua",
         "go",
+        "odin",
         "rust",
         "java",
         "markdown",
@@ -18,6 +19,7 @@ return {
         pattern = {
           "lua",
           "go",
+          "odin",
           "rust",
           "java",
           "markdown",
